@@ -14,6 +14,18 @@ use Illuminate\Http\Request;
 Route::get('/', function () {
     return view('teste/welcome');
 });
+Route::get('/cliente/cadastrar', function () {
+    $nome = 'João Paulo';
+    $dia = '03/04/2019';
+    /*return view('cadastrar', [
+        'nome' => $nome,
+        'dia' => $dia
+    ]);*/
+    //return view('cadastrar',compact('nome', 'dia'));
+    return view('cliente.cadastrar')
+        ->with('nome',$nome)
+        ->with('dia',$dia);
+});
 
 Route::get('/cliente', function (){
     $csrfToken = csrf_token();
