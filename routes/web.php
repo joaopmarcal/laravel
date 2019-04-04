@@ -16,7 +16,23 @@ Route::get('/', function () {
 });
 
 Route::get('/cliente', function (){
-    return "Hello world!";
+    $csrfToken = csrf_token();
+    $html = <<<HTML
+    <html>
+    <body>
+        <h1>Cliente</h1>
+        <form method="post" action="/cliente/cadastrar">
+            <input type="hidden" name="_token" value="$csrfToken">
+            <input type="text" name="name" />
+            <button type="submit">Enviar</button>
+            </form>
+    </body>
+    </html>
+HTML;
+    return $html;
+});
+Route::post('/cliente/cadastrar', function (){
+   echo "Cliente Cadastrar";
 });
 
 Route::get('/cliente-echo', function (){
