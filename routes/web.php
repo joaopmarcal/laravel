@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,8 +31,11 @@ Route::get('/cliente', function (){
 HTML;
     return $html;
 });
-Route::post('/cliente/cadastrar', function (){
-   echo "Cliente Cadastrar";
+
+Route::post('/cliente/cadastrar', function(Request $request){
+   echo $request->get('name');
+   echo '<br>';
+   echo $request->name;
 });
 
 Route::get('/cliente-echo', function (){
