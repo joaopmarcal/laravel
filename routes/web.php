@@ -12,5 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('teste/welcome');
+});
+
+Route::get('/cliente', function (){
+    return "Hello world!";
+});
+
+Route::get('/cliente-echo', function (){
+   echo "texto com echo";
 });
