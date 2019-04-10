@@ -14,6 +14,15 @@ use Illuminate\Http\Request;
 Route::get('/', function () {
     return view('teste/welcome');
 });
+
+Route::get('/blade', function (){
+   $nome = 'João Paulo';
+   $dia = '03/04/2019';
+   return view('test')
+       ->with('nome',$nome)
+       ->with('dia',$dia);
+});
+
 Route::get('/cliente/cadastrar', function () {
     $nome = 'João Paulo';
     $dia = '03/04/2019';
