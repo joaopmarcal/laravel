@@ -15,6 +15,15 @@ Route::get('/', function () {
     return view('teste/welcome');
 });
 
+Route::get('/for-if/{value}', function ($value) {
+ return view('for-if')
+     ->with('value',$value)
+     ->with('myArray', [
+         'chave1' => 'valor1',
+         'chave2' => 'valor2',
+         'chave3' => 'valor3',
+     ]);
+});
 Route::get('/blade', function (){
    $nome = 'João Paulo';
    $dia = '03/04/2019';
