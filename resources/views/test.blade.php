@@ -13,3 +13,4 @@
 {{  "<h1>school of net</h1>" }}
 <br><br><br><br><br>
 {!! "<h1>school of net</h1>"!!}
+<br>
