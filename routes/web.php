@@ -1,5 +1,7 @@
 <?php
 use Illuminate\Http\Request;
+
+// MVC - Model - View - Controller
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,6 +16,8 @@ use Illuminate\Http\Request;
 Route::get('/', function () {
     return view('teste/welcome');
 });
+
+Route::get('controller/cliente/cadastrar', 'ClientsController@cadastrar');
 
 Route::get('/for-if/{value}', function ($value) {
  return view('for-if')
