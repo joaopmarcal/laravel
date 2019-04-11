@@ -14,7 +14,7 @@ class ClientsController extends Controller
             'dia' => $dia
         ]);*/
         //return view('cadastrar',compact('nome', 'dia'));
-        return view('cliente.cadastrar')
+        return view('admin.cliente.cadastrar')
             ->with('nome',$nome)
             ->with('dia',$dia);
     }

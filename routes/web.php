@@ -16,8 +16,17 @@ use Illuminate\Http\Request;
 Route::get('/', function () {
     return view('teste/welcome');
 });
+Route::group(['prefix' => '/'],function (){
+    Route::get('cliente/cadastrar', 'ClientsController@cadastrar');
+});
 
-Route::get('controller/cliente/cadastrar', 'ClientsController@cadastrar');
+Route::group(['prefix' => '/admin'],function (){
+    Route::group(['prefix' => '/cliente'],function (){
+        Route::get('/cadastrar', 'ClientsController@cadastrar');
+    });
+});
+
+
 
 Route::get('/for-if/{value}', function ($value) {
  return view('for-if')
