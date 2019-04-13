@@ -18,6 +18,9 @@ Route::get('/', function () {
 });
 Route::group(['prefix' => '/'],function (){
     Route::get('cliente/cadastrar', 'ClientsController@cadastrar');
+    Route::get('env',function (){
+       var_dump(env('NOME', 'xpto'));
+    });
 });
 
 Route::group(['prefix' => '/admin'],function (){
