@@ -63,8 +63,14 @@ class ClientsController extends Controller
             ->with('dia',$dia);
     }
 */
-    public function excluir(){
+    public function excluir(Request $request,$id){
 
+        $client = Client::find($id);
+        if(!$client){
+            abort(404);
+        }
+        $client->delete();
+        return redirect()->to('/admin/client');
     }
 
 }
